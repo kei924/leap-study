@@ -1,0 +1,93 @@
+@import 'reset';
+@import 'setting';
+
+// header
+header{
+  width: 100%;
+  height: 45px;
+  line-height: 45px;
+  background-color: $white;
+  border-top: 4px solid $accent;
+}
+
+.logo{
+  display: inline-block;
+  width: 65px;
+  margin: 15px;
+}
+
+.menu-box{
+  background-color: $accent;
+  float: right;
+  width: 45px;
+  height: 45px;
+  position: relative;
+  cursor: pointer;
+}
+
+.menu{
+  display: block;
+  position: absolute;
+  margin-top: 19.5px;
+  margin-left: 13.5px;
+}
+
+.menu-line{
+  display: block;
+  width: 18px;
+  height: 2px;
+  background-color: $white;
+}
+
+.menu-line:nth-of-type(1){
+  position: relative;
+  top: -4px;
+}
+
+.menu-line:nth-of-type(3){
+  position: relative;
+  top: 4px;
+}
+
+.mv{
+  width: 100%;
+  text-align: center;
+  z-index: 1;
+}
+
+.mv-text-area{
+  text-align: center;
+  z-index: 10;
+}
+
+
+.concept{
+  margin-top: -175px;
+}
+
+.mv-text{
+  margin-top: 15px;
+  font-size: 0.9em;
+  font-weight: 300;
+}
+
+
+
+// footer
+footer{
+  background-color: #3F5468;
+  width: 100%;
+  height: 40px;
+  position: absolute;
+  bottom: 0px;
+  color: $white;
+  text-align: center;
+  line-height: 40px;
+  font-size: 0.8em;
+}
+
+@media (min-width: 768px) {
+}
+
+@media (max-width: 1366px) {
+}
