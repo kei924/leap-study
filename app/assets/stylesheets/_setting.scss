@@ -1,6 +1,7 @@
 $base: #F8F6EF;
 $base_sub: #f09797;
 $accent: #C8533A;
+$accent_sub: #AB4631;
 $base_text: #585858;
 $link_text: #C8533A;
 $link_text_sub: #585858;
@@ -56,8 +57,7 @@ a {
   color: $link_text;
   text-decoration: none;
   &:hover {
-    color: $link_text_sub;
-    text-decoration: underline;
+    color: $white;
   }
 }
 

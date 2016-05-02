@@ -1,6 +1,28 @@
 @import 'reset';
 @import 'setting';
 
+// base
+html{
+  position: relative;
+  min-height: 100%;
+}
+
+
+// parts
+.red-button{
+  width: 90%;
+  height: 50px;
+  background-color: $accent;
+  margin: 0 auto;
+  border-radius: 4px;
+    &:hover{
+      background-color: $accent_sub;
+    };
+}
+.red-button p{
+  color: $white;
+}
+
 // header
 header{
   width: 100%;
@@ -51,43 +73,64 @@ header{
 
 .mv{
   width: 100%;
+  position: relative;
+}
+
+.mv-img{
+  width: 100%;
   text-align: center;
   z-index: 1;
 }
 
 .mv-text-area{
   text-align: center;
-  z-index: 10;
+  position: absolute;
+  bottom: 60px;
 }
 
-
-.concept{
-  margin-top: -175px;
+.mv-text-area{
+  text-align: center;
+  width: 100%;
+}
+.mv-text-area h3{
+  text-align: center;
 }
 
-.mv-text{
+.mv-text-area p{
   margin-top: 15px;
   font-size: 0.9em;
   font-weight: 300;
+  text-align: center;
 }
 
-
+.show-all-tutor{
+  position: relative;
+  color: $white;
+  text-align: center;
+  line-height: 50px;
+  margin-top: 30px;
+}
 
 // footer
 footer{
+  position: absolute;
   background-color: #3F5468;
   width: 100%;
   height: 40px;
-  position: absolute;
-  bottom: 0px;
-  color: $white;
+  color:  #ccc;
   text-align: center;
   line-height: 40px;
   font-size: 0.8em;
+  bottom: 0;
 }
 
 @media (min-width: 768px) {
 }
 
-@media (max-width: 1366px) {
+@media (min-width: 1000px) {
+  footer{
+    position: relative;
+    margin-bottom: 0;
+    margin-top: 60px;
+  }
 }
