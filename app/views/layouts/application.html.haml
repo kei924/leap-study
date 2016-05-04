@@ -8,8 +8,16 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
   %body
-    = render partial: 'common/header'
-    = yield
-    = render partial: 'common/footer'
+    .container
+      = render partial: 'common/header'
+      = yield
+      = render partial: 'common/footer'
+
     / jQuery
-    %script{:src => "https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"}
+    = javascript_include_tag 'jquery.flexslider.js' => true
+    :javascript
+      $(window).load(function() {
+        $('.flexslider').flexslider({
+          animation: "slide"
+        });
+      });
