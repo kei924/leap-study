@@ -334,7 +334,9 @@ hr.lesson-list-line{
 .field input{
   width: 100%;
   height: 45px;
+  border: 1px solid $light_gray;
   margin-top: 5px;
+  padding: 0 0 0 15px;
 }
 
 .field span{
