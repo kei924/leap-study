@@ -6,7 +6,12 @@ $base_text: #585858;
 $link_text: #C8533A;
 $link_text_sub: #585858;
 $white: #FFF;
-
+$gray: #9B9B9B;
+$light_gray: #EEE;
+$ultra_light_gray: #F6F6F5;
+$ocher: #C49C5A;
+$top_bar: #8C8476;
+$top_bar_bg: #EDE7D2;
 //setting
 @charset "UTF-8";
 @import url(//fonts.googleapis.com/css?family=Montserrat);
@@ -24,11 +29,21 @@ body {
   -moz-font-feature-settings: "liga", "kern";
 }
 body,input,textarea,table,h1,h2,h3,h4,h5,h6 {
-  line-height: 1.67;
-  letter-spacing: 0.15em;
+  line-height: 2.0;
+  letter-spacing: 0.08em;
   font-size: 13px;
   color: $base_text;
   font-weight: bold !important;
+}
+
+.clearfix:after {
+    content:" ";
+    display:block;
+    clear:both;
+}
+
+p{
+  font-weight: lighter;
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -90,7 +105,16 @@ input[type=submit] {
   &:hover {
     background-color: lighten($base, 3%) !important;
   }
+}
 
+.dashed{
+  border-top: 1px dashed $gray;
+  margin: 20px 0 25px;
+}
+
+.solid{
+  border-top: 1px solid $light_gray;
+  margin: 20px 0 25px;
 }
 
 .transition, a, .button {

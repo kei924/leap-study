@@ -8,6 +8,8 @@
       家庭教師マッチングサービスです。<br>
       孤独な勉強生活で悩む受験生の方々を<br>
       サポートするプライベート講師に出会えます。
-.show-all-tutor.red-button
-  %a{:href => '/'}
-    %p 講師を見てみる
+= link_to "講師を見てみる", { :controller => "tutors", :action => "show"}, { :class => "show-all-tutor red-button large-button"}
+- if student_signed_in?
+  = link_to "ログアウト", destroy_student_session_path, method: :delete 
+- else
+  = link_to "ログイン", new_student_session_path
