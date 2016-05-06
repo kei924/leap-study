@@ -1,0 +1,11 @@
+%h2.top-bar パスワードを変更
+= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
+  = devise_error_messages!
+  .form-area-signup
+    .field
+      = f.label :email, class: "textarea"
+      %br/
+      = f.email_field :email, autofocus: true, class: "textarea"
+    .actions
+      = f.submit "パスワードを変更する", class: "red-button large-button chenge-pw";
+= render "devise/shared/links"

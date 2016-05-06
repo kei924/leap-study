@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160504023051) do
+ActiveRecord::Schema.define(version: 20160506080611) do
 
   create_table "students", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
@@ -26,13 +26,17 @@ ActiveRecord::Schema.define(version: 20160504023051) do
     t.string   "last_sign_in_ip",        limit: 255
     t.datetime "created_at",                                      null: false
     t.datetime "updated_at",                                      null: false
+    t.string   "name",                   limit: 255
+    t.string   "gender",                 limit: 255
+    t.string   "job",                    limit: 255
+    t.string   "job_detail",             limit: 255
   end
 
   add_index "students", ["email"], name: "index_students_on_email", unique: true, using: :btree
   add_index "students", ["reset_password_token"], name: "index_students_on_reset_password_token", unique: true, using: :btree
 
   create_table "tutors", force: :cascade do |t|
-    t.string   "firstname",            limit: 255
+    t.string   "name",                 limit: 255
     t.string   "prof_img",             limit: 255
     t.string   "status",               limit: 255
     t.text     "profile",              limit: 65535
@@ -44,7 +48,6 @@ ActiveRecord::Schema.define(version: 20160504023051) do
     t.string   "necessities",          limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "lastname",             limit: 255
   end
 
 end

@@ -83,14 +83,31 @@ input:-webkit-autofill {
 -webkit-box-shadow: 0 0 0px 1000px white inset;
 }
 
-// input[type=text],
-// input[type=email],
-// input[type=password],
-// textarea {
-//   border: 1px solid #ddd;
-//   border-radius: 5px;
-//   padding: 5px 3px;
-// }
+input[type=text],
+input[type=email],
+input[type=password],
+textarea {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px 3px;
+}
+/*textarea:focus {
+  box-shadow: 0 0 7px #1abc9c;
+  border: 10px solid #1abc9c;
+}*/
+input::-webkit-input-placeholder {
+    color: #ddd;
+    font-weight: lighter;
+}
+input:-ms-input-placeholder {
+    color: #ddd;
+    font-weight: lighter;
+}
+input::-moz-placeholder {
+    color: #ddd;
+    font-weight: lighter;
+}
+
 input[type=submit] {
   @extend .button;
 }
