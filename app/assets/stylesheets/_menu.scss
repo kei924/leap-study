@@ -12,6 +12,7 @@
     padding: 12px 13px;
     cursor: pointer;
     background-color: $accent;
+    -webkit-transition: all 400ms cubic-bezier(1.000, 0.000, 0.000, 1.000);
 }
 
 .icon-bar{
@@ -19,6 +20,7 @@
     background: #FFF;
     display: block;
     margin-bottom: 6px;
+    -webkit-transition: all 400ms cubic-bezier(1.000, 0.000, 0.000, 1.000);
 }
 
 #drawernav{
