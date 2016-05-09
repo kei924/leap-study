@@ -1,0 +1,20 @@
+.contents-wrap
+  .contents-bg
+    .section-header
+      %h2 LEAPの講師一覧
+    - if @tutors
+      - @tutors.each do |tutor|
+        = link_to "/tutors/#{tutor.id}", :class => "tutor-outline", method: :get do
+          .tutor-meta.clearfix
+            = image_tag('tutorprof@2x.png', class: 'tutor-prof')
+            .tutor-meta-right
+              .tutor-kana
+                = tutor.yomi
+              .tutor-name
+                = tutor.name
+              %hr.tutor-meta-line
+              .tutor-status
+                = tutor.status
+          %p.tutor-proftext.tutor-page-text
+            = tutor.profile
+          %hr.solid

@@ -13,24 +13,19 @@
       = yield
       = render partial: 'common/footer'
     #humberger
-      %span.menu-line
-      %span.menu-line
-      %span.menu-line
-      / .menu-box
-      /   %a{:href => '/', :class => 'menu'}
-      /     %span{:class => 'menu-line'}
-      /     %span{:class => 'menu-line'}
-      /     %span{:class => 'menu-line'}
+      %span.icon-bar
+      %span.icon-bar
+      %span.icon-bar
     #drawernav
       %ul
         %li
-          %a{:href => "/"}TOP
+          = link_to "TOP", "/"
         %li
-          %a{:href => "/"}アカウントを作る
+          = link_to "アカウントを作る", new_student_registration_path, get: :method
         %li
-          %a{:href => "/"}ログインする
+          = link_to "ログインする", new_student_session_path, get: :method
         %li
-          %a{:href => "/"}講師を見る
+          = link_to "講師を見る", tutors_path, get: :method
         
     / jQuery
     = javascript_include_tag 'jquery.flexslider.js' => true

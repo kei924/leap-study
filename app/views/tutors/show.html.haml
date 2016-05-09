@@ -1,13 +1,64 @@
 .contents-wrap
   .contents-bg
+    .tutor-meta.clearfix
+      = image_tag('tutorprof@2x.png', class: 'tutor-prof')
+      .tutor-meta-right
+        .tutor-kana
+          = @tutor.yomi
+        .tutor-name
+          = @tutor.name
+        %hr.tutor-meta-line
+        .tutor-status
+          = @tutor.status
+    %p.tutor-proftext.tutor-page-text
+      = @tutor.profile
+    %hr.dashed
+    .section-header 
+      %h2 勉強ストーリー
+    %p.tutor-story.tutor-page-text
+      = @tutor.study_story
     .section-header
-      %h2 LEAPの講師一覧
-    = render partial: 'tutors/tutor_outline'
-    %hr.solid
-    = render partial: 'tutors/tutor_outline'
-    %hr.solid
-    = render partial: 'tutors/tutor_outline'
-    %hr.solid
-    = render partial: 'tutors/tutor_outline'
-    %hr.solid
-    = render partial: 'tutors/tutor_outline'
+      %h2 講師からのメッセージ
+    %p.tutor-message.tutor-page-text
+      = @tutor.message
+    .section-header
+      %h2 授業風景
+    .flexslider
+      %ul.slides
+        %li
+          = image_tag('image1.jpg', :class => 'lesson-pic')
+        %li
+          = image_tag('image1.jpg', :class => 'lesson-pic')
+        %li
+          = image_tag('image1.jpg', :class => 'lesson-pic')
+        %li
+          = image_tag('image1.jpg', :class => 'lesson-pic')
+    .section-header
+      %h2 基本情報
+    %dl.lesson-list.clearfix
+      %dt
+        %span 料金
+      %dd
+        = @tutor.price
+      %hr{:class => 'lesson-list-line'}
+      %dt
+        %span 可能な曜日
+      %dd
+        = @tutor.possible_day_of_week
+      %hr{:class => 'lesson-list-line'}
+      %dt
+        %span 授業頻度
+      %dd
+        = @tutor.frequency
+      %hr{:class => 'lesson-list-line'}
+      %dt
+        %span 持ち物
+      %dd
+        = @tutor.necessities
+  .button-wrap.clearfix
+    .apply-for-lesson.small-button.red-button
+      %a{:href => '/'}
+        授業を依頼する
+    .ask-tutor.small-button.red-frame-button
+      %a{:href => '/'}
+        話を聞いてみる
