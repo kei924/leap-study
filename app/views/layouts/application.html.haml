@@ -18,14 +18,22 @@
       %span.icon-bar
     #drawernav
       %ul
-        %li
-          = link_to "TOP", "/"
-        %li
-          = link_to "アカウントを作る", new_student_registration_path, get: :method
-        %li
-          = link_to "ログインする", new_student_session_path, get: :method
-        %li
-          = link_to "講師を見る", tutors_path, get: :method
+        - if student_signed_in?
+          %li
+            = link_to "TOP", "/"
+          %li
+            = link_to "講師を見る", tutors_path, get: :method
+          %li
+            = link_to "マイページ", tutors_path, get: :method
+        - else
+          %li
+            = link_to "TOP", "/"
+          %li
+            = link_to "アカウントを作る", new_student_registration_path, get: :method
+          %li
+            = link_to "ログインする", new_student_session_path, get: :method
+          %li
+            = link_to "講師を見る", tutors_path, get: :method
         
     / jQuery
     = javascript_include_tag 'jquery.flexslider.js' => true

@@ -124,6 +124,10 @@ input[type=submit] {
   }
 }
 
+.hidden{
+  display: none;
+}
+
 .dashed{
   border-top: 1px dashed $gray;
   margin: 20px 0 25px;

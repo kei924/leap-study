@@ -23,6 +23,7 @@ html, body{
   background-color: $accent;
   margin: 0 auto;
   border-radius: 3px;
+  color: $white;
     &:hover{
       background-color: $accent_sub;
     };

@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
   root 'welcome#index'
   devise_for :students
-  resources :tutors
+  resources :tutors do
+    get 'requests' => 'requests#index'
+    get 'requests/complete' => 'requests#complete'
+    post 'requests/complete'
+  end
   # devise_scope :students do
   #   gets '/students/sign_out' => 'devise/sessions#destroy'
   # end

@@ -31,7 +31,7 @@
     height: 100%;
     background: #444;
     color: #fff;
-    z-index: 1;
+    z-index: 40;
     padding-top: 50px;
     -webkit-transition: all 400ms cubic-bezier(1.000, 0.000, 0.000, 1.000); 
        -moz-transition: all 400ms cubic-bezier(1.000, 0.000, 0.000, 1.000); 
@@ -96,7 +96,7 @@ body.drawer-opened #humberger :nth-child(3){
     -webkit-transform:translate(0,-8px) rotate(-45deg);
 }
 body.drawer-opened #overlay{
-    z-index: 3;
+    z-index: 20;
     opacity: 0.3;
     left: -240px;
 }

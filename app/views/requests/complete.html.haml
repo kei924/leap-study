@@ -1,0 +1,25 @@
+%ul.request-flow.clearfix
+  %li.flow-content
+    .flow-number 1
+    .number-text 内容確認
+  %li.request-arrow
+  %li.flow-content
+    .flow-number 
+      %sapn 2
+    .number-text 決済情報入力
+  %li.request-arrow
+  %li.flow-content
+    .flow-number.active-number 3
+    .triangle
+.request-box
+  .request-title 申し込み完了
+  %hr.solid
+    .complete-text
+      申請が完了しました。
+      %br
+      [マイページ > ダイレクトメッセージ]
+      %br
+      に講師より３日以内に連絡が入ります。
+      %br
+      そちらご確認下さい。
+= link_to "ダイレクトメッセージを確認する", { :controller => "requests", :action => "complete"}, {:class => 'red-button large-button request-button'}

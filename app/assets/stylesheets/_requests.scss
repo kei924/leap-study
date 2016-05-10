@@ -1,0 +1,168 @@
+// Place all the styles related to the requests controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import 'reset';
+@import 'flexslider';
+@import 'setting';
+
+// index
+
+.request-flow{
+  width: 256px;
+  margin: 27px auto 0;
+}
+.request-flow li{
+  margin-right: 0px;
+}
+.request-flow li:last-child{
+  margin-right: 0;
+}
+.flow-content{
+  text-align: center;
+  float: left;
+  width: 70px;
+}
+.request-arrow{
+  display: block;
+  width: 0;
+  height: 0;
+  border-left: 15px solid #999;
+  border-top: 8px solid transparent;
+  border-right: 0px solid transparent;
+  border-bottom: 8px solid transparent;
+  float: left;
+  line-height: 32px;
+  margin: 10px 4px 0;
+}
+.flow-number{
+  background-color: $gray;
+  color: $white;
+  border-radius: 25px;
+  width: 32px;
+  height: 32px;
+  text-align: center;
+  line-height: 32px;
+  margin: 0 auto;
+}
+.active-number{
+  background-color: $accent;
+  color: $white;
+}
+.number-text{
+  font-size: 0.8em;
+  color: $gray;
+  margin: 7px auto 0;
+}
+.triangle{
+  display: block;
+  width: 0;
+  height: 0;
+  border-bottom: 18px solid $light-gray;
+  border-top: 0px solid transparent;
+  border-right: 11px solid transparent;
+  border-left: 11px solid transparent;
+  margin: 10px auto 0;
+  position: relative;
+  z-index: 30;
+}
+.triangle:before{
+  content: "";
+  border-bottom: 13px solid $white;
+  border-top: 0px solid transparent;
+  border-right: 8px solid transparent;
+  border-left: 8px solid transparent;
+  position: absolute;
+  bottom: -18px;
+  left: -8px;
+  margin: 10px auto 0;
+}
+.request-box{
+  background-color: $white;
+  border: 1px solid #light-gray;
+  width: 100%;
+  position: relative;
+  top: -2px;
+  border: 2px solid $light-gray;
+}
+.request-title{
+  width: 100%;
+  height: 40px;
+  padding: 0 45px;
+  padding-top: 8px;
+  position: relative;
+}
+.request-title:before{
+  content: url("request.png");
+  position: absolute;
+  top: 11px;
+  left: 20px;
+}
+.request-box .tutor-meta{
+  background-color: #FBFAF8;
+  border: 1px solid #DDD;
+  border-radius: 5px;
+  padding: 10px;
+}
+.request-box .solid{
+  margin: 0;
+}
+
+.request-tutor{
+  padding: 15px 20px;
+}
+
+.request-tutor .tutor-prof{
+  margin: 0;
+  width: 80px;
+}
+.request-price{
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  padding: 0 20px;
+}
+.price-left{
+  float: left;
+}
+.price-right{
+  float: right;
+  color: $gray;
+}
+.request-button{
+  margin-top: 30px !important;
+  text-align: center;
+  line-height: 50px;
+  font-size: 1.1em;
+}
+.request-text{
+  text-align: center;
+  margin-top: 25px;
+  font-size: 0.9em;
+}
+.ask-link{
+  margin-top: 10px;
+  color: $accent;
+  text-decoration: underline;
+}
+.webpay-button #WP_checkoutBox input{
+  height: 50px !important;
+  width: 90% !important;
+  margin-left: 5% !important;
+  margin-top: 30px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  top: 0 !important;
+  left: 0 !important;
+  border-radius: 3px !important;
+  background-color: $accent !important;
+  font-size: 1.1em !important;
+}
+
+
+// complete
+
+.complete-text{
+  text-align: center;
+  font-size: 0.9em;
+  padding: 15px 0;
+}

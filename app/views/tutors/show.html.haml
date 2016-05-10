@@ -57,8 +57,6 @@
         = @tutor.necessities
   .button-wrap.clearfix
     .apply-for-lesson.small-button.red-button
-      %a{:href => '/'}
-        授業を依頼する
+      = link_to '授業を依頼する', tutor_requests_path(@tutor)
     .ask-tutor.small-button.red-frame-button
-      %a{:href => '/'}
-        話を聞いてみる
+      = link_to ' 話を聞いてみる', '#'
