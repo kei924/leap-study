@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
-  root 'welcome#index'
+  get 'chats' => 'chats#index'
+  post 'post' => 'chats#post'
   devise_for :students
+  resources :students
+  root 'welcome#index'
+  resources :chats
   resources :tutors do
     get 'requests' => 'requests#index'
     get 'requests/complete' => 'requests#complete'

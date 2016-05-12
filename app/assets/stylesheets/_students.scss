@@ -1,0 +1,76 @@
+// Place all the styles related to the students controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import 'reset';
+@import 'setting';
+
+.prof-contents-above{
+  width: 100%;
+  height: 80px;
+  background-color: $light-gray;
+}
+.prof-contents-under{
+  width: 100%;
+  background-color: $white;
+  height: 100px;
+}
+.prof-container{
+  width: 100%;
+}
+
+.mypage-img{
+  display: block;
+  position: relative;
+  float: left;
+  width: 30%;
+  height: auto;
+  padding-left: 8%;
+  top: -35px;
+}
+.prof-contents{
+  width: 70%;
+  float: left;
+  position: relative;
+  padding-left: 4%;
+  top: -35px;
+}
+.prof-name{
+  font-size: 1.2em;
+}
+.prof-button{
+  width: 140px;
+  height: 35px;
+  background-color: $light-gray;
+  font-size: 0.9em;
+  color: $base-text;
+  line-height: 35px;
+  text-align: center;
+  border-radius: 3px;
+  border: 1px solid #CCC;
+}
+
+.edit-prof{
+  display: block;
+  margin-top: 15px;
+}
+.change-pw{
+  display: block;
+  margin-top: 7px;
+}
+.dm-button{
+  display: block;
+  background: -moz-linear-gradient(top,#CCC8B9 0%,#B6B3A4);
+  background: -webkit-gradient(linear, left top, left bottom, from(#CCC8B9), to(#B6B3A4));
+  color: $white;
+  position: relative;
+  width: 90%;
+  height: 50px;
+  line-height: 50px;
+  margin: 0 auto;
+  text-align: center;
+  border-radius: 3px;
+  margin-top: 22px;
+    &:hover{
+     opacity: 0.5;
+    };
+}

@@ -22,18 +22,20 @@
           %li
             = link_to "TOP", "/"
           %li
-            = link_to "講師を見る", tutors_path, get: :method
+            = link_to "講師を見る", tutors_path, method: :get
           %li
-            = link_to "マイページ", tutors_path, get: :method
+            = link_to "マイページ", "/students/#{current_student.id}", method: :get
+          %li
+            = link_to "ログアウト", destroy_student_session_path, method: :delete
         - else
           %li
             = link_to "TOP", "/"
           %li
-            = link_to "アカウントを作る", new_student_registration_path, get: :method
+            = link_to "アカウントを作る", new_student_registration_path, method: :get
           %li
-            = link_to "ログインする", new_student_session_path, get: :method
+            = link_to "ログインする", new_student_session_path, method: :get
           %li
-            = link_to "講師を見る", tutors_path, get: :method
+            = link_to "講師を見る", tutors_path, method: :get
         
     / jQuery
     = javascript_include_tag 'jquery.flexslider.js' => true
