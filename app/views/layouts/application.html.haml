@@ -27,6 +27,13 @@
             = link_to "マイページ", "/students/#{current_student.id}", method: :get
           %li
             = link_to "ログアウト", destroy_student_session_path, method: :delete
+        - elsif teacher_signed_in?
+          %li
+            = link_to "TOP", "/"
+          %li
+            = link_to "マイページ(講師)", "/teachers/#{current_teacher.id}", method: :get
+          %li
+            = link_to "ログアウト(講師)", destroy_teacher_session_path, method: :delete
         - else
           %li
             = link_to "TOP", "/"
@@ -36,7 +43,8 @@
             = link_to "ログインする", new_student_session_path, method: :get
           %li
             = link_to "講師を見る", tutors_path, method: :get
-        
+          %li
+            = link_to "講師の方はこちら", new_teacher_session_path, method: :get
     / jQuery
     = javascript_include_tag 'jquery.flexslider.js' => true
     :javascript

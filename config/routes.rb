@@ -1,6 +1,13 @@
 Rails.application.routes.draw do
   get 'chats' => 'chats#index'
   post 'post' => 'chats#post'
+  # devise_for :teachers
+  devise_for :teachers, controllers: {
+    sessions:      'teachers/sessions',
+    passwords:     'teachers/passwords',
+    registrations: 'teachers/registrations'
+  }
+  resources :teachers
   devise_for :students
   resources :students
   root 'welcome#index'
