@@ -59,4 +59,4 @@
     .apply-for-lesson.small-button.red-button
       = link_to '授業を依頼する', tutor_requests_path(@tutor)
     .ask-tutor.small-button.red-frame-button
-      = link_to ' 話を聞いてみる', '#'
+      = link_to ' 話を聞いてみる', student_chat_path(@student,@tutor)

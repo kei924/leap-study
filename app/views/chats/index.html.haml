@@ -1,0 +1,12 @@
+%h2.top-bar メッセージする講師を選んで下さい
+%ul.chat-container
+  - @tutors.each do |tutor|
+    %li
+      = link_to "/students/#{@student.id}/chats/#{tutor.id}", class: 'chat-list clearfix' do
+        = image_tag('tutorprof@2x.png', :class => 'tutor-prof-chat')
+        .chat-meta
+          .chat-name
+            = tutor.name
+          .chat-last-time
+            2016年5月11日23:34
+        = image_tag('chat_arrow.png', :class => 'chat-arrow', size: "10×17.5")

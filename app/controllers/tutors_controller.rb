@@ -4,5 +4,6 @@ class TutorsController < ApplicationController
   end
   def show
     @tutor = Tutor.find(params[:id])
+    @student = current_student
   end
 end

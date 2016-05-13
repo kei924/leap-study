@@ -1,10 +1,18 @@
 Rails.application.routes.draw do
-  get 'chats' => 'chats#index'
-  post 'post' => 'chats#post'
+  
+  devise_for :teachers, controllers: {
+    sessions:      'teachers/sessions',
+    passwords:     'teachers/passwords',
+    registrations: 'teachers/registrations'
+  }
+  resources :teachers
   devise_for :students
-  resources :students
+  resources :students do
+    resources :chats
+    post 'post' => 'chat#post'
+  end
   root 'welcome#index'
-  resources :chats
+  
   resources :tutors do
     get 'requests' => 'requests#index'
     get 'requests/complete' => 'requests#complete'
