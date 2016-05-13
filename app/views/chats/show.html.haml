@@ -1,0 +1,12 @@
+%h2.top-bar #{@tutor.name}先生
+%ul.comment-container
+  %li
+    .comment-wrap.clearfix
+      = image_tag('tutorprof@2x.png', :class => 'tutor-prof-chat')
+      .comment-right
+        .chat-name
+          = @tutor.name
+        .comment
+          %p なるほどですね！なるほどですね！なるほどですね！なるほどですね！なるほどですね！なるほどですね！
+        .comment-date
+          %p 2016年2月12日 17:30

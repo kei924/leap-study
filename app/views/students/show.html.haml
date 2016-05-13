@@ -6,4 +6,4 @@
       .prof-name 小田啓
       = link_to 'プロフィールを編集', edit_student_registration_path,:class => 'edit-prof prof-button',method: :get
       = link_to 'パスワードを変更', edit_student_password_path,:class => 'change-pw prof-button', method: :get
-= link_to 'ダイレクトメッセージを見る', '/', :class => 'dm-button'
+= link_to 'ダイレクトメッセージを見る', student_chats_path(@student), :class => 'dm-button'

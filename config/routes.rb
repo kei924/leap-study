@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
-  get 'chats' => 'chats#index'
-  post 'post' => 'chats#post'
-  # devise_for :teachers
+  post 'posts' => 'chats#post'
   devise_for :teachers, controllers: {
     sessions:      'teachers/sessions',
     passwords:     'teachers/passwords',
@@ -9,9 +7,11 @@ Rails.application.routes.draw do
   }
   resources :teachers
   devise_for :students
-  resources :students
+  resources :students do
+    resources :chats
+  end
   root 'welcome#index'
-  resources :chats
+  
   resources :tutors do
     get 'requests' => 'requests#index'
     get 'requests/complete' => 'requests#complete'
