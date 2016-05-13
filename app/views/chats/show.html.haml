@@ -1,12 +1,21 @@
-%h2.top-bar #{@tutor.name}先生
-%ul.comment-container
-  %li
-    .comment-wrap.clearfix
-      = image_tag('tutorprof@2x.png', :class => 'tutor-prof-chat')
-      .comment-right
-        .chat-name
-          = @tutor.name
-        .comment
-          %p なるほどですね！なるほどですね！なるほどですね！なるほどですね！なるほどですね！なるほどですね！
-        .comment-date
-          %p 2016年2月12日 17:30
+%script{:src => "https://js.pusher.com/3.1/pusher.min.js", :type => "text/javascript"}
+:javascript
+  // Enable pusher logging - don't include this in production
+  Pusher.log = function(message) {
+    if (window.console && window.console.log) {
+      window.console.log(message);
+    }
+  };
+  
+  var pusher = new Pusher(' @pusher_access_key ');
+  var channel = pusher.subscribe('general_channel');
+  channel.bind('chat_event', function(data) {
+  var messagelog = document.getElementById('messagelog');
+  var messagediv = document.createElement('div');
+  messagediv.innerHTML = data.message;
+  messagelog.appendChild(messagediv);
+  });
+= form_tag('/post', :remote => true) do
+  = text_field_tag 'message'
+  = submit_tag 'send'
+#messagelog

@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  post 'posts' => 'chats#post'
+  
   devise_for :teachers, controllers: {
     sessions:      'teachers/sessions',
     passwords:     'teachers/passwords',
@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   devise_for :students
   resources :students do
     resources :chats
+    post 'post' => 'chat#post'
   end
   root 'welcome#index'
   
