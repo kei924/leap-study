@@ -5,19 +5,30 @@ Rails.application.routes.draw do
     passwords:     'teachers/passwords',
     registrations: 'teachers/registrations'
   }
-  resources :teachers
-  devise_for :students
-  resources :students do
-    resources :chats
-    post 'post' => 'chat#post'
-  end
-  root 'welcome#index'
-  
-  resources :tutors do
+  resources :teachers do
     get 'requests' => 'requests#index'
     get 'requests/complete' => 'requests#complete'
     post 'requests/complete'
+    get 'mypage' =>'teachers#mypage'
+    resources :chats
   end
+  devise_for :students
+  resources :students do
+    resources :chats
+    # post 'post' => 'chats#post'
+  end
+  root 'welcome#index'
+  resources :chats do
+    get 'post' => 'chats#post'
+
+    resources :messages
+    # post 'chats/"#{@chat_id}"' => 'messages#create'
+  end
+  # resources :tutors do
+  #   get 'requests' => 'requests#index'
+  #   get 'requests/complete' => 'requests#complete'
+  #   post 'requests/complete'
+  # end
   # devise_scope :students do
   #   gets '/students/sign_out' => 'devise/sessions#destroy'
   # end

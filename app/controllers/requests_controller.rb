@@ -1,6 +1,6 @@
 class RequestsController < ApplicationController
   def index
-    @tutor = Tutor.find(params[:tutor_id])
+    @teacher = Teacher.find(params[:teacher_id])
   end
   def complete
       webpay = WebPay.new(WEBPAY_SECRET_KEY)

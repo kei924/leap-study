@@ -1,1 +1,64 @@
-teacher
+.contents-wrap
+  .contents-bg
+    .tutor-meta.clearfix
+      = image_tag('tutorprof@2x.png', class: 'tutor-prof')
+      .tutor-meta-right
+        .tutor-kana
+          = @teacher.yomi
+        .tutor-name
+          = @teacher.name
+        %hr.tutor-meta-line
+        .tutor-status
+          = @teacher.status
+    %p.tutor-proftext.tutor-page-text
+      = @teacher.profile
+    %hr.dashed
+    .section-header 
+      %h2 勉強ストーリー
+    %p.tutor-story.tutor-page-text
+      = @teacher.study_story
+    .section-header
+      %h2 講師からのメッセージ
+    %p.tutor-message.tutor-page-text
+      = @teacher.prof_message
+    .section-header
+      %h2 授業風景
+    .flexslider
+      %ul.slides
+        %li
+          = image_tag('image1.jpg', :class => 'lesson-pic')
+        %li
+          = image_tag('image1.jpg', :class => 'lesson-pic')
+        %li
+          = image_tag('image1.jpg', :class => 'lesson-pic')
+        %li
+          = image_tag('image1.jpg', :class => 'lesson-pic')
+    .section-header
+      %h2 基本情報
+    %dl.lesson-list.clearfix
+      %dt
+        %span 料金
+      %dd
+        = @teacher.price
+      %hr{:class => 'lesson-list-line'}
+      %dt
+        %span 可能な曜日
+      %dd
+        = @teacher.possible_day_of_week
+      %hr{:class => 'lesson-list-line'}
+      %dt
+        %span 授業頻度
+      %dd
+        = @teacher.frequency
+      %hr{:class => 'lesson-list-line'}
+      %dt
+        %span 持ち物
+      %dd
+        = @teacher.necessities
+  - if student_signed_in?
+    .button-wrap.clearfix
+      .apply-for-lesson.small-button.red-button
+        = link_to '授業を依頼する', teacher_requests_path(@teacher)
+      .ask-tutor.small-button.red-frame-button
+        = link_to ' 話を聞いてみる', chat_path(@teacher, teacher_id: @teacher, student_id: @student)
+  - else
