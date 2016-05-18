@@ -128,8 +128,6 @@ ul.more_list {
   padding: 10px 0 0 10px;
   line-height: 1;
 }
-
-
 .send-button{
   padding: 0 !important;
   width: 14.6%;
@@ -142,5 +140,11 @@ ul.more_list {
   &:hover{
     opacity: 0.6;
   }
+}
+.no-message{
+  text-align: center;
+  width: 75%;
+  margin: 0 auto;
+  font-size: 1.0em;
 }
 

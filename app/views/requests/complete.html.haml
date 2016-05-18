@@ -22,4 +22,4 @@
       に講師より３日以内に連絡が入ります。
       %br
       そちらご確認下さい。
-= link_to "ダイレクトメッセージを確認する", { :controller => "requests", :action => "complete"}, {:class => 'red-button large-button request-button'}
+      = link_to "ダイレクトメッセージを確認する", chat_path(@teacher, teacher_id: @teacher, student_id: @student), {class: 'to_direct large-button red-button'}

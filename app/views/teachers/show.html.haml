@@ -1,6 +1,9 @@
 .contents-wrap
   .contents-bg
     .tutor-meta.clearfix
+      %p
+        %b Image:
+        = image_tag @teacher.image_url.to_s
       = image_tag('tutorprof@2x.png', class: 'tutor-prof')
       .tutor-meta-right
         .tutor-kana

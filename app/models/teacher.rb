@@ -5,4 +5,6 @@ class Teacher < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   has_many :chatrooms
   has_many :comments
+  has_many :requests
+  mount_uploader :image , ImageUploader
 end

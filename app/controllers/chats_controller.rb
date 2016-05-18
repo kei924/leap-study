@@ -1,5 +1,6 @@
 class ChatsController < ApplicationController
   def index
+
     # config_pusher = YAML.load_file('config/pusher.yml')[Rails.env]
     # @pusher_access_key = config_pusher['access_key']
     @teachers = Teacher.all
