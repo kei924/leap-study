@@ -1,0 +1,5 @@
+= form_tag("/chats/#{params[:chat_id]}/messages/#{@message.id}}", method: :patch ) do
+  %h2.top-bar コメントを編集してください
+
+  = text_area_tag(:message, "#{@message.content}", size: '30x2')
+  = submit_tag '送信', :class => 'send-button'

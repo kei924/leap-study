@@ -7,6 +7,7 @@
 .chat-container{
   width: 100%;
   margin-top: 20px;
+  padding-bottom: 100px;
 }
 .chat-list{
   display: block;
@@ -42,26 +43,75 @@
 }
 
 // show
-.comment-container li{
+.comment-container{
   width: 100%;
-  background-color: $white;
-  border-bottom: 1px solid$light-gray;
+  border-bottom: 1px solid $light-gray;
+  padding-bottom: 100px;
 }
 
 .comment-wrap{
   padding-top: 15px;
+  width: 100%;
+  background-color: $white;
+  border-bottom: 1px solid $light-gray;
 }
+
 
 .comment-right{
   width: 70%;
   float: left;
   margin-left: 5%;
   color: $base-text;
+  position: relative;
+}
+
+.more{
+  width: 20px;
+  height: auto;
+}
+
+.more-area{
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  text-align: right;
+  &:hover ul.more_list {
+    display: block;
+  }
+}
+ul.more_list {
+  position: absolute;
+  text-align: center;
+  width: 60px;
+  right: 0;
+  font-size: 12px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  display: none;
+  box-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+  border-radius: 3px;
+  z-index: 100;
+  li {
+    border-bottom: 1px solid #ddd;
+    &:last-child {
+      border-bottom: 0;
+    }
+    a {
+      color: #AAA;
+      display: block;
+      padding: 5px;
+      &:hover {
+        background-color: $accent;
+        color: #fff;
+      }
+    }
+  }
 }
 
 .comment{
-  font-size: 0.9em;
+  font-size: 0.8em;
   margin-top: 5px;
+  color: #909090;
 }
 .comment-date{
   font-size: 0.6em;
@@ -75,17 +125,19 @@
   margin-left: 3%;
   margin-right: 1%;
   margin-top: 10px;
-  padding: 10px 0 0 10px !important;
-  line-height: 1.5;
+  padding: 10px 0 0 10px;
+  line-height: 1;
 }
-.message-send{
+
+
+.send-button{
   padding: 0 !important;
   width: 14.6%;
   height: 35px;
+  line-height: 35px;
   margin-right: 3%;
-  background-color: $ocher;
   color: $white;
-  margin-top: -30px;
+  margin-top: -28px;
   border-radius: 3px !important;
   &:hover{
     opacity: 0.6;

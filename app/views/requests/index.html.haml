@@ -20,23 +20,23 @@
       = image_tag('tutorprof@2x.png', class: 'tutor-prof')
       .tutor-meta-right
         .tutor-kana
-          = @tutor.yomi
+          = @teacher.yomi
         .tutor-name
-          = @tutor.name
+          = @teacher.name
         %hr.tutor-meta-line
         .tutor-status
-          = @tutor.status
+          = @teacher.status
   %hr.solid
     .request-price.clearfix
       .price-left 料金：
       .price-right 
-        = @tutor.price
+        = @teacher.price
 = form_tag(action: :complete, method: :post) do
   .webpay-button
     %script.webpay-button.none{"data-key" => WEBPAY_PUBLIC_KEY, :src => "https://checkout.webpay.jp/v1/"}
 .request-text
   %p ※申し込み後の返金は行えませんので、<br>授業内容や日程に関して講師に先に<br>話を聞くことがオススメです。
-  = link_to "先に話を聞く",{ :controller => "requests", :action => "complete"}, {:class => 'ask-link'}
+  / = link_to "先に話を聞く",{ :controller => "requests", :action => "complete"}, {:class => 'ask-link'}
 = form_tag(action: :complete, method: :post) do
   .webpay-button
     %script.webpay-button.none{"data-key" => WEBPAY_PUBLIC_KEY, :src => "https://checkout.webpay.jp/v1/"}

@@ -1,21 +1,66 @@
-%script{:src => "https://js.pusher.com/3.1/pusher.min.js", :type => "text/javascript"}
-:javascript
-  // Enable pusher logging - don't include this in production
-  Pusher.log = function(message) {
-    if (window.console && window.console.log) {
-      window.console.log(message);
-    }
-  };
-  
-  var pusher = new Pusher(' @pusher_access_key ');
-  var channel = pusher.subscribe('general_channel');
-  channel.bind('chat_event', function(data) {
-  var messagelog = document.getElementById('messagelog');
-  var messagediv = document.createElement('div');
-  messagediv.innerHTML = data.message;
-  messagelog.appendChild(messagediv);
-  });
-= form_tag('/post', :remote => true) do
-  = text_field_tag 'message'
-  = submit_tag 'send'
-#messagelog
+/ %script{:src => "//js.pusher.com/2.2/pusher.min.js", :type => "text/javascript"}
+/ :javascript
+/   // Enable pusher logging - don't include this in production
+/   Pusher.log = function(message) {
+/     if (window.console && window.console.log) {
+/       window.console.log(message);
+/     }
+/   };
+/   var pusher = new Pusher('#{@pusher_access_key}');
+/   var channel = pusher.subscribe('general_channel');
+/   channel.bind('chat_event', function(data) {
+/     var messagelog = document.getElementById('messagelog');
+/     var messagediv = document.createElement('li');
+/     messagediv.innerHTML = data.message;
+/     messagediv.innerHTML = "<li id='comment-container comment-wrap'><div id='comment-right'><div id='comment-right'><div id='chat-name'>名前</div><div id='comment'></div><div id='comment-date'><p>2016年2月12日 17:30</p></div></div></div></div></div></li>";
+/     messagelog.appendChild(messagediv);
+
+/   });
+- if student_signed_in?
+  %h2.top-bar #{@teacher.name}先生
+  %ul.comment-container
+    - @messages.each do |message|
+      %li.comment-wrap.clearfix
+        = image_tag('tutorprof@2x.png', :class => 'tutor-prof-chat')
+        .comment-right
+          .chat-name
+            - if message.user_type == 0
+              = message.student.name
+            - elsif message.user_type == 1
+              = message.teacher.name
+          .comment
+            = message.content
+          .more-area
+            = image_tag('more.svg', class: 'more')
+            %ul.more_list
+              / %li
+              /   = link_to '編集', edit_chat_message_path(params[:chat_id], message.id), method: :get
+              %li
+                = link_to '削除', "/chats/#{params[:id]}/messages/#{message.id}" , method: :delete
+          .comment-date
+            %p 2016年2月12日 17:30
+    = form_tag({controller: 'messages', action: 'create', chat_id: @chat.id, teacher_id: @teacher.id}, {method: :post}) do
+      = text_area_tag(:message, '', size: '30x2')
+      = submit_tag '送信', :class => 'send-button'
+
+- elsif teacher_signed_in?
+  %h2.top-bar #{@student.name}
+  %ul.comment-container
+    - @messages.each do |message|
+      %li.comment-wrap.clearfix
+        = image_tag('tutorprof@2x.png', :class => 'tutor-prof-chat')
+        .comment-right
+          .chat-name
+            - if message.user_type == 0
+              = message.student.name
+            - elsif message.user_type == 1
+              = message.teacher.name
+          .comment
+            = message.content
+          = image_tag('more.svg')
+          .comment-date
+            %p 2016年2月12日 17:30
+    = form_tag({controller: 'messages', action: 'create', chat_id: @chat.id, teacher_id: @chat.teacher.id}, {method: :post}) do
+      = text_area_tag(:message, '', size: '30x2')
+      = submit_tag '送信', :class => 'send-button'
+
