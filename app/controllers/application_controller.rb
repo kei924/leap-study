@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
      root_path
   end
   def configure_permitted_parameters
-    devise_parameter_sanitizer.for(:sign_up).push(:name, :gender, :job, :job_detail, :image)
+    devise_parameter_sanitizer.for(:sign_up).push(:name, :gender, :job, :job_detail, :image, :status, :email, :yomi, :profile)
   end
   def welcome
     

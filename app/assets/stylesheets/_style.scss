@@ -8,6 +8,9 @@ html, body{
    margin: 0px;
    padding: 0px;
 }
+a:hover{
+  color: #585858;
+}
 
 .container{
   position: relative;
@@ -333,6 +336,13 @@ hr.lesson-list-line{
 .login{
   margin: 0 0 20px;
   width: 100%;
+}
+
+.form-area-signup input[type="file"]{
+  box-sizing: border-box;
+  padding-left: 0 !important;
+  width: 100%;
+  border: none;
 }
 
 .chenge-pw{

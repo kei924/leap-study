@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160518100827) do
+ActiveRecord::Schema.define(version: 20160519093405) do
 
   create_table "chatrooms", force: :cascade do |t|
     t.datetime "created_at"
@@ -54,6 +54,7 @@ ActiveRecord::Schema.define(version: 20160518100827) do
     t.string   "gender",                 limit: 255
     t.string   "job",                    limit: 255
     t.string   "job_detail",             limit: 255
+    t.string   "image",                  limit: 255
   end
 
   add_index "students", ["email"], name: "index_students_on_email", unique: true, using: :btree
@@ -83,7 +84,10 @@ ActiveRecord::Schema.define(version: 20160518100827) do
     t.string   "last_sign_in_ip",        limit: 255
     t.datetime "created_at",                                         null: false
     t.datetime "updated_at",                                         null: false
+    t.string   "lesson_p01",             limit: 255
+    t.string   "lesson_p02",             limit: 255
     t.string   "image",                  limit: 255
+    t.string   "lesson_p03",             limit: 255
   end
 
   add_index "teachers", ["email"], name: "index_teachers_on_email", unique: true, using: :btree

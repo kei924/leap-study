@@ -1,9 +1,10 @@
 .prof-container
   .prof-contents-above
   .prof-contents-under.clearfix
-    = image_tag('tutorprof@2x.png', class: 'mypage-img')
+    = image_tag(@student.image_url.to_s, class: 'mypage-img')
     .prof-contents
-      .prof-name 小田啓
+      .prof-name
+        = @student.name
       = link_to 'プロフィールを編集', edit_student_registration_path,:class => 'edit-prof prof-button',method: :get
       = link_to 'パスワードを変更', edit_student_password_path,:class => 'change-pw prof-button', method: :get
 = link_to 'ダイレクトメッセージを見る', student_chats_path(@student, techer_id: @teacher), :class => 'dm-button'

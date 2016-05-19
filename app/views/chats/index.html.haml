@@ -4,7 +4,7 @@
     - @chats.each do |chat|
       %li
         = link_to chat_path(chat, teacher_id: chat.teacher.id, student_id: @student), class: 'chat-list clearfix' do
-          = image_tag('tutorprof@2x.png', :class => 'tutor-prof-chat')
+          = image_tag(chat.teacher.image_url.to_s, class: 'tutor-prof-chat')
           .chat-meta
             .chat-name
               = chat.teacher.name
@@ -18,7 +18,7 @@
     - @chats.each do |chat|
       %li
         = link_to chat_path(chat, student_id: chat.student.id, teacher_id: chat.teacher.id), class: 'chat-list clearfix' do
-          = image_tag('tutorprof@2x.png', :class => 'tutor-prof-chat')
+          = image_tag(chat.student.image_url.to_s, class: 'tutor-prof-chat')
           .chat-meta
             .chat-name
               = chat.student.name

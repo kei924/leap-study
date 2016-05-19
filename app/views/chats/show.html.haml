@@ -7,7 +7,10 @@
   %ul.comment-container
     - @messages.each do |message|
       %li.comment-wrap.clearfix
-        = image_tag('tutorprof@2x.png', :class => 'tutor-prof-chat')
+        - if message.user_type == 0
+          = image_tag(message.student.image_url.to_s, class: 'tutor-prof-chat')
+        - elsif message.user_type == 1
+          = image_tag(message.teacher.image_url.to_s, class: 'tutor-prof-chat')
         .comment-right
           .chat-name
             - if message.user_type == 0
@@ -34,7 +37,11 @@
   %ul.comment-container
     - @messages.each do |message|
       %li.comment-wrap.clearfix
-        = image_tag('tutorprof@2x.png', :class => 'tutor-prof-chat')
+        - if message.user_type == 0
+          = image_tag(message.student.image_url.to_s, class: 'tutor-prof-chat')
+        - elsif message.user_type == 1
+          = image_tag(message.teacher.image_url.to_s, class: 'tutor-prof-chat')
+          / = image_tag(teacher.image_url.to_s, class: 'tutor-prof-chat')
         .comment-right
           .chat-name
             - if message.user_type == 0
@@ -43,7 +50,13 @@
               = message.teacher.name
           .comment
             = message.content
-          = image_tag('more.svg')
+          .more-area
+            = image_tag('more.svg', class: 'more')
+            %ul.more_list
+              / %li
+              /   = link_to '編集', edit_chat_message_path(params[:chat_id], message.id), method: :get
+              %li
+                = link_to '削除', "/chats/#{message.chatroom.id}/messages/#{message.id}" , method: :delete
           .comment-date
             %p 2016年2月12日 17:30
     = form_tag({controller: 'messages', action: 'create', chat_id: @chat.id, teacher_id: @chat.teacher.id}, {method: :post}) do

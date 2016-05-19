@@ -1,24 +1,31 @@
-%h2 Sign up
+%h2.top-bar 講師新規登録
 = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
   = devise_error_messages!
-  .field
-    = f.label :image
-    = f.file_field :image
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true
-  .field
-    = f.label :password
-    - if @minimum_password_length
-      %em
-        (#{@minimum_password_length} characters minimum)
-    %br/
-    = f.password_field :password, autocomplete: "off"
-  .field
-    = f.label :password_confirmation
-    %br/
-    = f.password_field :password_confirmation, autocomplete: "off"
-  .actions
-    = f.submit "Sign up"
+  .form-area-signup
+    .field
+      = f.label :プロフ画像
+      = f.file_field :image
+    .field
+      = f.label :名前
+      = f.text_field :name, autofocus: true, placeholder: "山田　太郎", class: "textarea"
+    .field
+      = f.label :よみ
+      = f.text_field :yomi, autofocus: true, placeholder: "やまだ　たろう", class: "textarea"
+    .field
+      = f.label :メールアドレス
+      = f.email_field :email, autofocus: true, placeholder: "example@gmail.com", class: "textarea"
+    .field
+      = f.label :所属
+      = f.text_field :status, autofocus: true, placeholder: "慶応義塾大学大学院2年", class: "textarea"
+    .field
+      = f.label :パスワード
+      - if @minimum_password_length
+        %span.pw-rule
+          (8文字以上の英数字)
+      = f.password_field :password, autocomplete: "off", class: "textarea"
+    .field
+      = f.label :パスワード確認
+      = f.password_field :password_confirmation, autocomplete: "off", class: "textarea"
+    .actions
+      = f.submit "登録する", class: "red-button large-button signup";
 = render "teachers/shared/links"

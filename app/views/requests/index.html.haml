@@ -17,7 +17,7 @@
   %hr.solid
   .request-tutor
     .tutor-meta.clearfix
-      = image_tag('tutorprof@2x.png', class: 'tutor-prof')
+      = image_tag(@teacher.image_url.to_s, class: 'tutor-prof')
       .tutor-meta-right
         .tutor-kana
           = @teacher.yomi

@@ -1,10 +1,7 @@
 .contents-wrap
   .contents-bg
     .tutor-meta.clearfix
-      %p
-        %b Image:
-        = image_tag @teacher.image_url.to_s
-      = image_tag('tutorprof@2x.png', class: 'tutor-prof')
+      = image_tag(@teacher.image_url.to_s, class: 'tutor-prof')
       .tutor-meta-right
         .tutor-kana
           = @teacher.yomi
@@ -14,28 +11,38 @@
         .tutor-status
           = @teacher.status
     %p.tutor-proftext.tutor-page-text
-      = @teacher.profile
+      / = @teacher.profile
+      1991年生まれ。慶應義塾高校から慶應義塾大学 法学部政治学科へ進学。藤巻ゼミに所属し、主に国際租税法を学んでいます。司法試験に関しては2年生からスタートで勉強を始めてから2年弱。2015年9月の第回全国司法試験プレでは全国１位を獲得。
     %hr.dashed
     .section-header 
       %h2 勉強ストーリー
     %p.tutor-story.tutor-page-text
-      = @teacher.study_story
+      / = @teacher.study_story
+      特に目標を持っていなかった大学２年生の春、自分は司法試験の勉強を始めました。司法試験は正直あまりにハードルが高く、日吉の伊藤塾でなんとはなく話は聞いてみたものの大学生活の全てを資格に捧げるなんて、考えられませんでした。 ただ、その時、一言伊藤塾のメンターの方がおっしゃった「◯◯◯◯◯」という言葉が 家に帰っても忘れられなく、大学受験で失敗し自信をなくしていた僕にとって、ああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ
     .section-header
       %h2 講師からのメッセージ
     %p.tutor-message.tutor-page-text
-      = @teacher.prof_message
+      / = @teacher.prof_message
+      講師の熱のこもったメッセージ講師の熱のこもったメッセージ講師の熱のこもったメッセージ講師の熱のこもったメッセージ講師の熱のこもったメッセージ講師の熱のこもったメッセージ講師の熱のこもったメッセージ講師の熱のこもったメッセージ講師の熱のこもったメッセージ講師の熱のこもったメッセージ講師の熱のこもったメッセージ講師の熱のこもったメッセージ講師の熱のこもったメッセージ。 講師の熱のこもったメッセージ講師の熱のこもったメッセージ講師の熱のこもったメッセージ講師の熱のこもったメッセージ講師の熱のこもったメッセージ講師の熱のこもったメッセージ講師の熱のこもったメッセージ講師の熱のこもったメッセージ講師の熱のこもったメッセージ講師の熱のこもったメッセージ講師の熱のこもったメッセージ講師の熱のこもったメッセージ
     .section-header
       %h2 授業風景
     .flexslider
       %ul.slides
         %li
-          = image_tag('image1.jpg', :class => 'lesson-pic')
+          - unless @teacher.lesson_p01_url.to_s.blank?
+            = image_tag(@teacher.lesson_p01_url.to_s, class: 'lesson-pic')
+          - else
+            = image_tag "image1.jpg", class: 'lesson-pic'
         %li
-          = image_tag('image1.jpg', :class => 'lesson-pic')
+          - unless @teacher.lesson_p02_url.to_s.blank?
+            = image_tag(@teacher.lesson_p02_url.to_s, class: 'lesson-pic')
+          - else
+            = image_tag "image1.jpg", class: 'lesson-pic'
         %li
-          = image_tag('image1.jpg', :class => 'lesson-pic')
-        %li
-          = image_tag('image1.jpg', :class => 'lesson-pic')
+          - unless @teacher.lesson_p03_url.to_s.blank?
+            = image_tag(@teacher.lesson_p03_url.to_s, class: 'lesson-pic')
+          - else
+            = image_tag "image1.jpg", class: 'lesson-pic'
     .section-header
       %h2 基本情報
     %dl.lesson-list.clearfix

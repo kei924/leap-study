@@ -2,10 +2,10 @@
   .prof-container
     .prof-contents-above
     .prof-contents-under.clearfix
-      = image_tag('tutorprof@2x.png', class: 'mypage-img')
+      = image_tag(@teacher.image_url.to_s, class: 'mypage-img')
       .prof-contents
         .prof-name 
-        = @current_teacher.name
+          = @current_teacher.name
         = link_to 'プロフィールを編集', edit_teacher_registration_path,:class => 'edit-prof prof-button',method: :get
         = link_to 'パスワードを変更', edit_teacher_password_path,:class => 'change-pw prof-button', method: :get
   = link_to 'ダイレクトメッセージを見る', teacher_chats_path(@teacher, student_id: @student), :class => 'dm-button'
